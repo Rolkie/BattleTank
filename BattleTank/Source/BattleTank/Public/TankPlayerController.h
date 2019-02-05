@@ -35,5 +35,14 @@ private:
 
 	UPROPERTY(EditAnywhere)
 	float CrossHairYLocation = 0.33333f;
+
+	// Fetches the camera look direction
+	bool GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const;
+
+	UPROPERTY(EditAnywhere)
+	float LineTraceRange = 1000000.0f;
+
+	// Linetraces from the camera through reticule
+	bool GetLookVectorHitLocation(FVector LookDirection, FVector& HitLocation) const;
 	
 };
